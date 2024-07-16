@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<table>
+  <base>CRM/Memberscards</base>
+  <class>SxsMembersCards</class>
+  <name>civicrm_sxs_members_cards</name>
+  <comment>FIXME</comment>
+  <log>true</log>
+
+  <field>
+    <name>id</name>
+    <type>int unsigned</type>
+    <required>true</required>
+    <comment>Unique SxsMembersCards ID</comment>
+    <html>
+      <type>Number</type>
+    </html>
+  </field>
+  <primaryKey>
+    <name>id</name>
+    <autoincrement>true</autoincrement>
+  </primaryKey>
+  
+  <field>
+    <name>membership_id</name>
+    <type>int unsigned</type>
+    <required>true</required>
+    <comment>Membership ID</comment>
+    <html>
+      <type>Number</type>
+    </html>
+  </field>
+
+  <field>
+    <name>start_no</name>
+    <type>int unsigned</type>
+    <required>true</required>
+    <default>2999</default>
+    <comment>Sequential member card start number.</comment>
+    <html>
+      <type>Number</type>
+    </html>
+  </field>
+
+  <field>
+    <name>card_no</name>
+    <type>int unsigned</type>
+    <required>true</required>
+    <default>0</default>
+    <comment>Sequential member card number.</comment>
+    <html>
+      <type>Number</type>
+    </html>
+  </field>
+  
+  <field>
+    <name>contact_id</name>
+    <type>int unsigned</type>
+    <required>true</required>
+    <comment>FK to Contact</comment>
+    <html>
+      <type>Number</type>
+    </html>
+  </field>
+  <foreignKey>
+    <name>contact_id</name>
+    <table>civicrm_contact</table>
+    <key>id</key>
+    <onDelete>CASCADE</onDelete>
+  </foreignKey>
+
+  <field>
+    <name>created</name>
+    <type>timestamp</type>
+    <required>true</required>
+    <default>current_timestamp()</default>
+    <comment>Created timestamp</comment>
+  </field>
+
+  <field>
+    <name>modified</name>
+    <type>timestamp</type>
+    <required>true</required>
+    <default>current_timestamp()</default>
+    <comment>Modified timestamp</comment>
+  </field>
+
+</table>
